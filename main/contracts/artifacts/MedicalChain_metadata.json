@@ -1,0 +1,360 @@
+{
+	"compiler": {
+		"version": "0.5.17+commit.d19bba13"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [],
+				"payable": false,
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "address",
+						"name": "admin",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "address",
+						"name": "doctor",
+						"type": "address"
+					}
+				],
+				"name": "DrDetailsAdded",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "address",
+						"name": "dr",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "address",
+						"name": "patient",
+						"type": "address"
+					}
+				],
+				"name": "GrantAccessToDr",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "address",
+						"name": "dr",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "address",
+						"name": "patient",
+						"type": "address"
+					}
+				],
+				"name": "HealthRecordsAdded",
+				"type": "event"
+			},
+			{
+				"constant": true,
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_Id",
+						"type": "address"
+					}
+				],
+				"name": "getDoctorDetails",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "_state",
+						"type": "bool"
+					},
+					{
+						"internalType": "address",
+						"name": "_drId",
+						"type": "address"
+					},
+					{
+						"internalType": "string",
+						"name": "_name",
+						"type": "string"
+					}
+				],
+				"payable": false,
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"constant": true,
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_dr",
+						"type": "address"
+					}
+				],
+				"name": "getHealthRecords",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "_drName",
+						"type": "string"
+					},
+					{
+						"internalType": "address",
+						"name": "_drId",
+						"type": "address"
+					},
+					{
+						"internalType": "string",
+						"name": "_paName",
+						"type": "string"
+					},
+					{
+						"internalType": "address",
+						"name": "_paId",
+						"type": "address"
+					},
+					{
+						"internalType": "string",
+						"name": "_prescription",
+						"type": "string"
+					},
+					{
+						"internalType": "string[]",
+						"name": "_rec",
+						"type": "string[]"
+					}
+				],
+				"payable": false,
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"constant": true,
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_paId",
+						"type": "address"
+					}
+				],
+				"name": "getHealthRecordsForDoctor",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "_drName",
+						"type": "string"
+					},
+					{
+						"internalType": "address",
+						"name": "_drId",
+						"type": "address"
+					},
+					{
+						"internalType": "string",
+						"name": "_paName",
+						"type": "string"
+					},
+					{
+						"internalType": "address",
+						"name": "_pId",
+						"type": "address"
+					},
+					{
+						"internalType": "string",
+						"name": "_prescription",
+						"type": "string"
+					},
+					{
+						"internalType": "string[]",
+						"name": "_rec",
+						"type": "string[]"
+					}
+				],
+				"payable": false,
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"constant": true,
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_Id",
+						"type": "address"
+					}
+				],
+				"name": "getPatientDetails",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "_state",
+						"type": "bool"
+					},
+					{
+						"internalType": "address",
+						"name": "_paId",
+						"type": "address"
+					},
+					{
+						"internalType": "string",
+						"name": "_paName",
+						"type": "string"
+					},
+					{
+						"internalType": "string[]",
+						"name": "_paRecords",
+						"type": "string[]"
+					}
+				],
+				"payable": false,
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"constant": false,
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "doctor_id",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "access",
+						"type": "uint256"
+					}
+				],
+				"name": "grantAccessToDoctor",
+				"outputs": [],
+				"payable": false,
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"constant": false,
+				"inputs": [
+					{
+						"internalType": "bool",
+						"name": "_state",
+						"type": "bool"
+					},
+					{
+						"internalType": "address",
+						"name": "_drId",
+						"type": "address"
+					},
+					{
+						"internalType": "string",
+						"name": "_name",
+						"type": "string"
+					}
+				],
+				"name": "setDoctorDetails",
+				"outputs": [],
+				"payable": false,
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"constant": false,
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "_paName",
+						"type": "string"
+					},
+					{
+						"internalType": "address",
+						"name": "_paId",
+						"type": "address"
+					},
+					{
+						"internalType": "string",
+						"name": "_prescription",
+						"type": "string"
+					}
+				],
+				"name": "setHealthRecordsDetails",
+				"outputs": [],
+				"payable": false,
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"constant": false,
+				"inputs": [
+					{
+						"internalType": "bool",
+						"name": "_state",
+						"type": "bool"
+					},
+					{
+						"internalType": "address",
+						"name": "_paId",
+						"type": "address"
+					},
+					{
+						"internalType": "string",
+						"name": "_paName",
+						"type": "string"
+					},
+					{
+						"internalType": "string[]",
+						"name": "_paRecords",
+						"type": "string[]"
+					}
+				],
+				"name": "setPatientDetails",
+				"outputs": [],
+				"payable": false,
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"methods": {}
+		},
+		"userdoc": {
+			"methods": {}
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"contracts/Medical-Record.sol": "MedicalChain"
+		},
+		"evmVersion": "istanbul",
+		"libraries": {},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"contracts/Medical-Record.sol": {
+			"keccak256": "0x1e58ded6b259028bbd265b10b9821d048e1ae123e5e025815fa592cc5c01886d",
+			"urls": [
+				"bzz-raw://5871f436898676d2d4202b502fd9f4fb7b198b731741154a53cbc72e8523f666",
+				"dweb:/ipfs/QmenwaxtCdeb8sduFkoX3fvJyUsXmjqzf6rYMBb6VffcMJ"
+			]
+		}
+	},
+	"version": 1
+}
